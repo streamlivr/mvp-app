@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mvp/src/screens/register_page/register_page.dart';
+
+import '../../utils/constants.dart';
 
 class LaunchPage extends StatelessWidget {
   const LaunchPage({Key? key}) : super(key: key);
@@ -45,7 +48,22 @@ class LaunchPage extends StatelessWidget {
             SizedBox(height: 20.h),
             //button
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    transitionDuration: kAnimationDuration,
+                    pageBuilder: ((context, animation, _) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: const RegisterPage(),
+                      );
+                    }),
+                  ),
+                );
+              },
+              borderRadius: BorderRadius.circular(
+                11.r,
+              ),
               child: Container(
                 height: 64.h,
                 width: 87.w,
