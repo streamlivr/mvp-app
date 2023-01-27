@@ -63,10 +63,50 @@ final font14Black = TextStyle(
   fontWeight: FontWeight.w500,
   color: kTextColor1,
 );
+final font17Black = TextStyle(
+  fontSize: 17.sp,
+  fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
+final font15Black = TextStyle(
+  fontSize: 15.sp,
+  fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
 final font12Black = TextStyle(
   fontSize: 14.sp,
   fontWeight: FontWeight.w500,
   color: kTextColor1,
+);
+final font12_White = TextStyle(
+  fontSize: 12.sp,
+  fontWeight: FontWeight.w500,
+  color: Colors.white,
+);
+final font18White = TextStyle(
+  fontSize: 12.sp,
+  fontWeight: FontWeight.w500,
+  color: Colors.white,
+);
+final font18Black = TextStyle(
+  fontSize: 12.sp,
+  fontWeight: FontWeight.w500,
+  color: kTextColor1,
+);
+final font7White = TextStyle(
+  fontSize: 7.sp,
+  fontWeight: FontWeight.w500,
+  color: kWhiteColor,
+);
+final font13Black = TextStyle(
+  fontSize: 13.sp,
+  fontWeight: FontWeight.w500,
+  color: const Color(0xFFDAE5F0),
+);
+final font8Black = TextStyle(
+  fontSize: 8.sp,
+  fontWeight: FontWeight.w500,
+  color: kWhiteColor.withOpacity(0.64),
 );
 final font20Black = TextStyle(
   fontSize: 14.sp,

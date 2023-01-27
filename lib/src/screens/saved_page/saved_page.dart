@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mvp/src/screens/saved_page/components/saved_list_widget.dart';
+import 'package:mvp/src/screens/saved_page/components/search_widget.dart';
+import 'package:mvp/src/utils/constants.dart';
+import 'package:mvp/src/widgets/vertical_gap.dart';
 
 class SavedPage extends StatelessWidget {
   const SavedPage({Key? key}) : super(key: key);
@@ -11,7 +15,7 @@ class SavedPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text("Discover"),
+        title: const Text("Saved"),
         leading: Image.asset(
           "assets/icons/main_logo.png",
         ),
@@ -31,8 +35,18 @@ class SavedPage extends StatelessWidget {
         ],
       ),
       backgroundColor: Colors.transparent,
-      body: const Center(
-        child: Text('SavedPage'),
+      body: Padding(
+        padding: screenPadding,
+        child: Column(
+          children: const [
+            VerticalGap(gap: 30),
+            //search
+            SearchWidget(),
+            VerticalGap(gap: 40),
+            //saved list
+            SavedListWidget(),
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mvp/src/providers/navigation_provider/navigation_provider.dart';
 import 'package:mvp/src/screens/discover_page/discover_page.dart';
@@ -60,12 +61,22 @@ class MainPage extends StatelessWidget {
                                     v.selected != 0
                                         ? const SizedBox()
                                         : Container(
-                                            height: 10,
-                                            width: 15,
+                                            height: 7.84.h,
+                                            width: 11.w,
                                             decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                              color: Colors.red,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color(0xFFE0E0E0)
+                                                      .withOpacity(0.25),
+                                                  spreadRadius: 3,
+                                                  blurRadius: 4,
+                                                  offset: const Offset(0, 0),
+                                                )
+                                              ],
+                                              borderRadius: const BorderRadius
+                                                      .all(
+                                                  Radius.elliptical(100, 70)),
+                                              color: const Color(0xFF44A0CB),
                                             ),
                                           ),
                                   ],
@@ -82,12 +93,26 @@ class MainPage extends StatelessWidget {
                                         v.selected != 1
                                             ? const SizedBox()
                                             : Container(
-                                                height: 10,
-                                                width: 15,
+                                                height: 7.84.h,
+                                                width: 11.w,
                                                 decoration: BoxDecoration(
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: const Color(
+                                                              0xFFE0E0E0)
+                                                          .withOpacity(0.25),
+                                                      spreadRadius: 3,
+                                                      blurRadius: 4,
+                                                      offset:
+                                                          const Offset(0, 0),
+                                                    )
+                                                  ],
                                                   borderRadius:
-                                                      BorderRadius.circular(30),
-                                                  color: Colors.red,
+                                                      const BorderRadius.all(
+                                                          Radius.elliptical(
+                                                              100, 70)),
+                                                  color:
+                                                      const Color(0xFF44A0CB),
                                                 ),
                                               ),
                                       ],
@@ -101,7 +126,7 @@ class MainPage extends StatelessWidget {
                                   width: 30,
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: Colors.red,
+                                    color: Color(0xFF44A0CB),
                                   ),
                                   child: const Icon(Icons.add),
                                 ),
@@ -114,12 +139,22 @@ class MainPage extends StatelessWidget {
                                     v.selected != 3
                                         ? const SizedBox()
                                         : Container(
-                                            height: 10,
-                                            width: 15,
+                                            height: 7.84.h,
+                                            width: 11.w,
                                             decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                              color: Colors.red,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color(0xFFE0E0E0)
+                                                      .withOpacity(0.25),
+                                                  spreadRadius: 3,
+                                                  blurRadius: 4,
+                                                  offset: const Offset(0, 0),
+                                                )
+                                              ],
+                                              borderRadius: const BorderRadius
+                                                      .all(
+                                                  Radius.elliptical(100, 70)),
+                                              color: const Color(0xFF44A0CB),
                                             ),
                                           ),
                                   ],
@@ -133,12 +168,22 @@ class MainPage extends StatelessWidget {
                                     v.selected != 4
                                         ? const SizedBox()
                                         : Container(
-                                            height: 10,
-                                            width: 15,
+                                            height: 7.84.h,
+                                            width: 11.w,
                                             decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                              color: Colors.red,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color(0xFFE0E0E0)
+                                                      .withOpacity(0.25),
+                                                  spreadRadius: 3,
+                                                  blurRadius: 4,
+                                                  offset: const Offset(0, 0),
+                                                )
+                                              ],
+                                              borderRadius: const BorderRadius
+                                                      .all(
+                                                  Radius.elliptical(100, 70)),
+                                              color: const Color(0xFF44A0CB),
                                             ),
                                           ),
                                   ],
