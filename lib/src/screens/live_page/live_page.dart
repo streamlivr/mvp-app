@@ -3,6 +3,8 @@ import 'package:mvp/src/screens/live_page/components/comment_widget.dart';
 import 'package:mvp/src/screens/live_page/components/profile_widget.dart';
 import 'package:mvp/src/utils/constants.dart';
 
+import '../../widgets/vertical_gap.dart';
+
 class LivePage extends StatelessWidget {
   const LivePage({Key? key}) : super(key: key);
   @override
@@ -23,6 +25,7 @@ class LivePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: Column(
           children: [
+            VerticalGap(gap: 30),
             const ProfileWidget(),
             Align(
               alignment: Alignment.centerRight,

@@ -8,6 +8,7 @@ const kPrimaryColor1 = Color(0xFF231459);
 const kSecondaryColor = Color(0xFFFF715B);
 const kAccentColor = Color(0xFF3F4042);
 const kWhiteColor = Color(0xFFFFFFFF);
+const kBlueColor = Color(0xFF6F93F1);
 const kTransparentColor = Colors.transparent;
 const kGreyColor = Color(0xFFC0C0C0);
 const kGreyColor2 = Color(0xFFF0F0F0);
@@ -66,6 +67,51 @@ final font14Black = TextStyle(
 final font17Black = TextStyle(
   fontSize: 17.sp,
   fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
+final font15White = TextStyle(
+  fontSize: 15.sp,
+  fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
+final font8White = TextStyle(
+  fontSize: 8.sp,
+  fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
+final font12White = TextStyle(
+  fontSize: 12.sp,
+  fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
+final font20White = TextStyle(
+  fontSize: 8.sp,
+  fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
+final font10White = TextStyle(
+  fontSize: 10.sp,
+  fontWeight: FontWeight.normal,
+  color: kWhiteColor,
+);
+final font10Blue = TextStyle(
+  fontSize: 10.sp,
+  fontWeight: FontWeight.normal,
+  color: kBlueColor,
+);
+final font15Blue = TextStyle(
+  fontSize: 15.sp,
+  fontWeight: FontWeight.normal,
+  color: kBlueColor,
+);
+final font15White700 = TextStyle(
+  fontSize: 15.sp,
+  fontWeight: FontWeight.w700,
+  color: kWhiteColor,
+);
+final font15White300 = TextStyle(
+  fontSize: 15.sp,
+  fontWeight: FontWeight.w300,
   color: kWhiteColor,
 );
 final font15Black = TextStyle(

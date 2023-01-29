@@ -35,7 +35,7 @@ class ProfileWidget extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: CircleAvatar(
-                    radius: 36.5.r,
+                    radius: 51.5.r,
                     backgroundColor: const Color.fromARGB(255, 222, 49, 49)
                         .withOpacity(0.33),
                   ),
@@ -43,7 +43,7 @@ class ProfileWidget extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: CircleAvatar(
-                    radius: 32.5.r,
+                    radius: 49.5.r,
                     backgroundColor: const Color.fromARGB(255, 199, 44, 44)
                         .withOpacity(0.33),
                   ),
@@ -51,7 +51,7 @@ class ProfileWidget extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: CircleAvatar(
-                    radius: 29.5.r,
+                    radius: 44.5.r,
                     backgroundImage: const AssetImage(
                       "assets/images/wizkid.png",
                     ),
@@ -60,10 +60,13 @@ class ProfileWidget extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    height: 13.h,
-                    width: 50.w,
+                    height: 18.h,
+                    width: 67.w,
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Color(0xFFEF3B38),
+                      border: Border.all(
+                        color: Color(0xFFBAFFF3)
+                      ),
                       borderRadius: BorderRadius.circular(7.r),
                     ),
                     child: Row(
@@ -85,20 +88,29 @@ class ProfileWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Wizkid Ayo",
-                style: font18White,
+              Row(
+                children: [
+                  Text(
+                    "Wizkid",
+                    style: font15White700,
+                  ),
+                  Text(
+                    "Ayo",
+                    style: font15White300,
+                  ),
+                ],
               ),
               Row(
                 children: [
                   Text(
                     "Fringed.stvr.mainnet",
-                    style: font18White,
+                    style: font10Blue,
                   ),
+                  //#6F93F1
                   const HorizontalGap(gap: 5),
                   const Icon(
                     Icons.copy,
-                    color: kWhiteColor,
+                    color: Color(0xFF6F93F1),
                     size: 10,
                   )
                 ],

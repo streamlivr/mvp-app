@@ -13,45 +13,45 @@ class DiscoverListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var list = [
       SavedModel(
-        profile: "assets/images/woman.png",
-        name: "jessyenden1",
-        body: "Chill mellow accoustics",
-        image: "assets/images/monkey_b.png",
-        rating: "8.3",
+        profile: "assets/images/people.png",
+        name: "blacksimon",
+        body: "Mix of 2000's R&B and music from 2014ish",
+        image: "assets/images/black_white.png",
+        rating: "2.1",
       ),
       SavedModel(
         profile: "assets/images/portrait.png",
         name: "blacksimon",
         body: "Upbeat road trip car jams",
-        image: "assets/images/model.png",
+        image: "assets/images/video_production_v.png",
         rating: "6.1",
       ),
       SavedModel(
-        profile: "assets/images/male.png",
-        name: "adamsandi",
-        body: "Tswift all day everyday",
-        image: "assets/images/video_production.png",
-        rating: "6.1",
-      ),
-      SavedModel(
-        profile: "assets/images/people.png",
-        name: "blacksimon",
-        body: "Mix of 2000's R&B and music from 2014ish",
-        image: "assets/images/black_white_2.png",
-        rating: "2.1",
+        profile: "assets/images/woman.png",
+        name: "jessyenden1",
+        body: "Chill mellow acoustics",
+        image: "assets/images/monkey.png",
+        rating: "8.3",
       ),
       SavedModel(
         profile: "assets/images/person.png",
         name: "loganmahr",
         body: "Preppin for my Vogue photo shoot",
-        image: "assets/images/girl_2.png",
+        image: "assets/images/girl.png",
         rating: "4.7",
+      ),
+      SavedModel(
+        profile: "assets/images/male.png",
+        name: "adamsandi",
+        body: "Tswift all day everyday",
+        image: "assets/images/video_production_v.png",
+        rating: "6.1",
       ),
     ];
     return Expanded(
         child: StaggeredGridView.countBuilder(
       staggeredTileBuilder: (index) =>
-          StaggeredTile.count(1, index.isEven ? 2 : 1),
+          StaggeredTile.count(1, index.isOdd ? 2 : 1),
       mainAxisSpacing: 8,
       scrollDirection: Axis.vertical,
       crossAxisSpacing: 8,

@@ -26,7 +26,7 @@ class OptionsTile2 extends StatelessWidget {
                   child: Center(
                       child: Text(
                     data[0],
-                    style: font18White,
+                    style: font15White,
                   ))),
               Container(
                 height: 7.84.h,
@@ -53,7 +53,7 @@ class OptionsTile2 extends StatelessWidget {
               child: Center(
                   child: Text(
                 data[1],
-                style: font18White,
+                style: font15White,
               ))),
           Container(
               padding: const EdgeInsets.all(8),
@@ -61,7 +61,7 @@ class OptionsTile2 extends StatelessWidget {
               child: Center(
                   child: Text(
                 data[2],
-                style: font18White,
+                style: font15White,
               ))),
         ],
       ),

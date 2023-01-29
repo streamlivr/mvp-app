@@ -29,10 +29,13 @@ class OptionsList extends StatelessWidget {
           title: "My livestreams",
           trailing: CircleAvatar(
             radius: 10,
-            backgroundColor: kGreyColor3.withOpacity(0.5),
-            child: Text(
+            backgroundColor: Color(0xFFD9D8D9).withOpacity(0.26),
+            child: const Text(
               "9",
-              style: font8Black,
+              style: TextStyle(
+                fontSize: 18,
+                color: Color(0xFF2BE6FF),
+              ),
             ),
           ),
         ),

@@ -34,22 +34,22 @@ class ArtisteWidget extends StatelessWidget {
                   alignment: Alignment.center,
                   child: CircleAvatar(
                     radius: 16.5.r,
-                    backgroundColor: const Color.fromARGB(255, 222, 49, 49)
+                    backgroundColor: Color(0xFFEF3B38)
                         .withOpacity(0.33),
                   ),
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: CircleAvatar(
-                    radius: 12.5.r,
-                    backgroundColor: const Color.fromARGB(255, 199, 44, 44)
+                    radius: 15.5.r,
+                    backgroundColor:  Color(0xFFEF3B38)
                         .withOpacity(0.33),
                   ),
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: CircleAvatar(
-                    radius: 9.5.r,
+                    radius: 14.5.r,
                     backgroundImage: const AssetImage(
                       "assets/images/wizkid.png",
                     ),
@@ -63,11 +63,11 @@ class ArtisteWidget extends StatelessWidget {
             children: [
               Text(
                 "\$Morelovelessego",
-                style: font18White,
+                style: font15White,
               ),
               Text(
                 "owns 43.335 STVR",
-                style: font18White,
+                style: font8White,
               ),
             ],
           ),
@@ -76,11 +76,11 @@ class ArtisteWidget extends StatelessWidget {
             children: [
               Text(
                 "~\$130,000",
-                style: font18White,
+                style: font15White,
               ),
               Text(
                 "USD Value",
-                style: font18White,
+                style: font8White,
               ),
             ],
           ),

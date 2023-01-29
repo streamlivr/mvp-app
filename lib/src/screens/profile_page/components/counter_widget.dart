@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/src/utils/constants.dart';
 
 class CounterWidget extends StatelessWidget {
   const CounterWidget({Key? key}) : super(key: key);
@@ -21,8 +22,14 @@ Widget myColumn({
 }) {
   return Column(
     children: [
-      Text(title),
-      Text(subtitle),
+      Text(title,style: TextStyle(
+        color: kWhiteColor.withOpacity(0.42),
+        fontSize: 15
+      ),),
+      Text(subtitle,style: TextStyle(
+        color: kWhiteColor.withOpacity(0.42),
+        fontSize: 15
+      ),),
     ],
   );
 }

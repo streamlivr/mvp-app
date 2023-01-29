@@ -26,12 +26,12 @@ class OptionsTile extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   margin: const EdgeInsets.only(right: 8),
                   decoration: BoxDecoration(
-                      color: kAccentColor,
-                      borderRadius: BorderRadius.circular(20)),
+                      color: Color(0xFFD06DAA),
+                      borderRadius: BorderRadius.circular(17)),
                   child: Center(
                       child: Text(
                     data[0],
-                    style: font18White,
+                    style: font10White,
                   ))),
               const VerticalGap(gap: 5),
               Container(

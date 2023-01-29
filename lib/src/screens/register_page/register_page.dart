@@ -116,7 +116,7 @@ class _RegisterPageState extends State<RegisterPage>
                       isFilled: Colors.transparent,
                       child: Row(
                         children: [
-                          SvgPicture.asset('assets/icons/google.svg'),
+                          Image.asset('assets/icons/google.png'),
                           const HorizontalGap(gap: 20),
                           const Text("Continue with google"),
                         ],
