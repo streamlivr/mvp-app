@@ -81,6 +81,7 @@ class WalletPage extends StatelessWidget {
                 style: font18White,
               ),
             ),
+            const VerticalGap(gap: 10),
             const ArtisteWidget(),
           ],
         ),

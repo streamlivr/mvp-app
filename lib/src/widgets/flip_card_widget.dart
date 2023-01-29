@@ -35,7 +35,7 @@ class _FlipCardWidgetState extends State<FlipCardWidget>
       precacheImage(widget.end.image, context);
     });
     controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 8000));
+        vsync: this, duration: const Duration(milliseconds: 800));
     widget.controller._state = this;
   }
 
