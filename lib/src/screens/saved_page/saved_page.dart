@@ -4,6 +4,9 @@ import 'package:mvp/src/screens/saved_page/components/saved_list_widget.dart';
 import 'package:mvp/src/screens/saved_page/components/search_widget.dart';
 import 'package:mvp/src/utils/constants.dart';
 import 'package:mvp/src/widgets/vertical_gap.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/navigation_provider/navigation_provider.dart';
 
 class SavedPage extends StatelessWidget {
   const SavedPage({Key? key}) : super(key: key);
@@ -27,7 +30,10 @@ class SavedPage extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .changeSelected(5);
+            },
             icon: SvgPicture.asset(
               "assets/icons/person.svg",
             ),

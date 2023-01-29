@@ -7,6 +7,7 @@ import 'package:mvp/src/providers/navigation_provider/navigation_provider.dart';
 import 'package:mvp/src/screens/discover_page/discover_page.dart';
 import 'package:mvp/src/screens/home_page/home_page.dart';
 import 'package:mvp/src/screens/live_page/live_page.dart';
+import 'package:mvp/src/screens/profile_page/profile_page.dart';
 import 'package:mvp/src/screens/saved_page/saved_page.dart';
 import 'package:mvp/src/screens/wallet_page/wallet_page.dart';
 import 'package:provider/provider.dart';
@@ -21,16 +22,17 @@ class MainPage extends StatelessWidget {
       const LivePage(),
       const WalletPage(),
       const SavedPage(),
+      const ProfilePage(),
     ];
     var size = MediaQuery.of(context).size;
     return Consumer<NavigationProvider>(builder: (context, v, c) {
       return WillPopScope(
         onWillPop: () {
-          if (v.selected == 0) {
+          if (v.selected != 0) {
             v.changeSelected(0);
-            return Future.value(true);
-          } else {
             return Future.value(false);
+          } else {
+            return Future.value(true);
           }
         },
         child: Container(
@@ -51,7 +53,7 @@ class MainPage extends StatelessWidget {
                     : BottomNavigationBar(
                         backgroundColor: Colors.transparent,
                         onTap: (value) => v.changeSelected(value),
-                        currentIndex: v.selected,
+                        // currentIndex:v.selected==5?: v.selected,
                         type: BottomNavigationBarType.fixed,
                         items: [
                             BottomNavigationBarItem(

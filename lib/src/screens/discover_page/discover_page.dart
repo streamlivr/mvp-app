@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mvp/src/screens/discover_page/components/discover_list_widget.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/navigation_provider/navigation_provider.dart';
+import '../../utils/constants.dart';
+import '../../widgets/vertical_gap.dart';
+import 'components/search_widget.dart';
 
 class DiscoverPage extends StatelessWidget {
   const DiscoverPage({Key? key}) : super(key: key);
@@ -23,7 +30,10 @@ class DiscoverPage extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .changeSelected(5);
+            },
             icon: SvgPicture.asset(
               "assets/icons/person.svg",
             ),
@@ -31,8 +41,18 @@ class DiscoverPage extends StatelessWidget {
         ],
       ),
       backgroundColor: Colors.transparent,
-      body: const Center(
-        child: Text('DiscoverPage'),
+      body: Padding(
+        padding: screenPadding,
+        child: Column(
+          children: const [
+            VerticalGap(gap: 30),
+            //search
+            SearchWidget(),
+            VerticalGap(gap: 40),
+            //saved list
+            DiscoverListWidget(),
+          ],
+        ),
       ),
     );
   }

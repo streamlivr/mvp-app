@@ -6,7 +6,9 @@ import 'package:mvp/src/screens/live_page/components/popular_tile.dart';
 import 'package:mvp/src/screens/live_page/components/popular_view_tile.dart';
 import 'package:mvp/src/utils/constants.dart';
 import 'package:mvp/src/widgets/vertical_gap.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/navigation_provider/navigation_provider.dart';
 import '../live_page/components/live_tile.dart';
 
 class HomePage extends StatelessWidget {
@@ -29,7 +31,10 @@ class HomePage extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+               Provider.of<NavigationProvider>(context, listen: false)
+                  .changeSelected(5);
+            },
             icon: SvgPicture.asset(
               "assets/icons/person.svg",
             ),

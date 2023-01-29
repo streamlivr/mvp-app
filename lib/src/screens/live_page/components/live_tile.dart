@@ -23,7 +23,8 @@ class LiveTile extends StatelessWidget {
         // padding: screenPadding,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return SizedBox(
+          return 
+          SizedBox(
             height: 73.h,
             width: 73.w,
             // color: Colors.white,
@@ -82,6 +83,7 @@ class LiveTile extends StatelessWidget {
               ],
             ),
           );
+    
         },
       ),
     );
