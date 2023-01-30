@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvp/src/utils/constants.dart';
 import 'package:mvp/src/widgets/horizontal_gap.dart';
 
@@ -16,9 +17,12 @@ class OptionsList extends StatelessWidget {
           trailing: CircleAvatar(
             radius: 10,
             backgroundColor: kGreyColor3.withOpacity(0.5),
-            child: Text(
+            child: const Text(
               "4",
-              style: font8Black,
+              style: TextStyle(
+                fontSize: 8,
+                color: Color(0xFF2BE6FF),
+              ),
             ),
           ),
         ),
@@ -29,11 +33,11 @@ class OptionsList extends StatelessWidget {
           title: "My livestreams",
           trailing: CircleAvatar(
             radius: 10,
-            backgroundColor: Color(0xFFD9D8D9).withOpacity(0.26),
+            backgroundColor: const Color(0xFFD9D8D9).withOpacity(0.26),
             child: const Text(
               "9",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 8,
                 color: Color(0xFF2BE6FF),
               ),
             ),
@@ -46,16 +50,25 @@ class OptionsList extends StatelessWidget {
 }
 
 Widget tile({required String url, required String title, Widget? trailing}) {
-  return Row(
-    children: [
-      Image.asset(
-        url,
-        errorBuilder: (context, error, stackTrace) => const SizedBox(),
-      ),
-      const HorizontalGap(gap: 10),
-      Text(title),
-      const Spacer(),
-      trailing ?? const SizedBox(),
-    ],
+  return SizedBox(
+    height: 50.h,
+    child: Row(
+      children: [
+        SizedBox(
+          width: 20.w,
+          child: Image.asset(
+            url,
+            errorBuilder: (context, error, stackTrace) => const SizedBox(),
+          ),
+        ),
+        const HorizontalGap(gap: 10),
+        Text(
+          title,
+          style: font12White,
+        ),
+        const Spacer(),
+        trailing ?? const SizedBox(),
+      ],
+    ),
   );
 }

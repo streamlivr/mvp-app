@@ -11,9 +11,9 @@ class PaymentWidget extends StatelessWidget {
       padding: screenPadding,
       child: Row(
         children: [
-          tile(url: "assets/icons/money_bag.png", title: "title"),
+          tile(url: "assets/icons/money_bag.png", title: "Payments"),
           const HorizontalGap(gap: 10),
-          tile(url: "assets/icons/money_bag.png", title: "title"),
+          tile(url: "assets/icons/wrapped_gift.png", title: "Reward Centre"),
         ],
       ),
     );
@@ -26,11 +26,18 @@ Widget tile({required String url, required String title}) {
       height: 70.h,
       decoration: BoxDecoration(
         color: kAccentColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Image.asset(url), Text(title,style: font15White, ), ],
+        children: [
+          Image.asset(url),
+          const HorizontalGap(gap: 5),
+          Text(
+            title,
+            style: font15White,
+          ),
+        ],
       ),
     ),
   );

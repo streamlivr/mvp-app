@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage>
                       alignment: Alignment.topLeft,
                       child: Image.asset('assets/icons/main_logo.png'),
                     ),
-                    const VerticalGap(gap: 5),
+                    const VerticalGap(gap: 15),
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -82,12 +82,14 @@ class _RegisterPageState extends State<RegisterPage>
                         ),
                       ),
                     ),
-                    const VerticalGap(gap: 10),
+                    const VerticalGap(gap: 15),
                     nameInputField(
                       hint: "koln@streamlivr.com",
                       icon: SvgPicture.asset(
                         'assets/icons/message.svg',
                         color: Colors.white.withOpacity(0.33),
+                        height: 20.h,
+                        width: 20.w,
                       ),
                     ),
                     const VerticalGap(gap: 5),
@@ -96,9 +98,11 @@ class _RegisterPageState extends State<RegisterPage>
                       icon: SvgPicture.asset(
                         'assets/icons/key.svg',
                         color: Colors.white.withOpacity(0.33),
+                        height: 20.h,
+                        width: 20.w,
                       ),
                     ),
-                    const VerticalGap(gap: 200),
+                    const VerticalGap(gap: 180),
                     FilledButton(
                       child: Row(
                         children: [

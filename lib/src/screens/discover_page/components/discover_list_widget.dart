@@ -34,19 +34,20 @@ class DiscoverListWidget extends StatelessWidget {
         rating: "8.3",
       ),
       SavedModel(
+        profile: "assets/images/male.png",
+        name: "adamsandi",
+        body: "Tswift all day everyday",
+        image: "assets/images/video_production_v.png",
+        rating: "6.1",
+      ), 
+      SavedModel(
         profile: "assets/images/person.png",
         name: "loganmahr",
         body: "Preppin for my Vogue photo shoot",
         image: "assets/images/girl.png",
         rating: "4.7",
       ),
-      SavedModel(
-        profile: "assets/images/male.png",
-        name: "adamsandi",
-        body: "Tswift all day everyday",
-        image: "assets/images/video_production_v.png",
-        rating: "6.1",
-      ),
+     
     ];
     return Expanded(
         child: StaggeredGridView.countBuilder(

@@ -18,15 +18,19 @@ class ProfilePage extends StatelessWidget {
           VerticalGap(gap: 30),
           //profile
           ProfileWidget(),
+          VerticalGap(gap: 30),
           //counter
           CounterWidget(),
+          VerticalGap(gap: 20),
           //payment
           PaymentWidget(),
+          VerticalGap(gap: 10),
           Divider(
             color: kAccentColor,
             height: 20,
             thickness: 5,
           ),
+          VerticalGap(gap: 10),
           //options
           OptionsList()
         ],

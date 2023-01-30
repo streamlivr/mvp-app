@@ -22,14 +22,20 @@ Widget myColumn({
 }) {
   return Column(
     children: [
-      Text(title,style: TextStyle(
-        color: kWhiteColor.withOpacity(0.42),
-        fontSize: 15
-      ),),
-      Text(subtitle,style: TextStyle(
-        color: kWhiteColor.withOpacity(0.42),
-        fontSize: 15
-      ),),
+      Text(
+        title,
+        style: TextStyle(
+          color: kBlueColor.withOpacity(0.42),
+          fontSize: 15,
+        ),
+      ),
+      Text(
+        subtitle,
+        style: TextStyle(
+          color: kWhiteColor.withOpacity(0.42),
+          fontSize: 15,
+        ),
+      ),
     ],
   );
 }

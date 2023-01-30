@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvp/src/utils/constants.dart';
 import 'package:mvp/src/widgets/horizontal_gap.dart';
 
@@ -7,21 +8,18 @@ class WalletWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 150.h,
       width: double.infinity,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        gradient:LinearGradient(
-          colors: [
-Color(0xFF5D77BA),
-Color(0xFFD06CA7),
-Color(0xFF7B9BEF),
-          ]
-        ),
-        borderRadius: BorderRadius.circular(20),
+        gradient: const RadialGradient(radius: 5, colors: [
+          Color(0xFF5D77BA),
+          Color(0xFFD06CA7),
+          Color(0xFF7B9BEF),
+        ]),
+        borderRadius: BorderRadius.circular(20.r),
       ),
-      child: 
-      Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,7 +33,7 @@ Color(0xFF7B9BEF),
                 "35,850,1524 STVR",
                 style: font20White,
               ),
-               Text(
+              Text(
                 "STVR",
                 style: font10White,
               ),
@@ -61,7 +59,6 @@ Color(0xFF7B9BEF),
           ),
         ],
       ),
-  
     );
   }
 }

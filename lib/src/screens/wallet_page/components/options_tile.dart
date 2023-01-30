@@ -26,7 +26,7 @@ class OptionsTile extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   margin: const EdgeInsets.only(right: 8),
                   decoration: BoxDecoration(
-                      color: Color(0xFFD06DAA),
+                      color: const Color(0xFF44A0CB),
                       borderRadius: BorderRadius.circular(17)),
                   child: Center(
                       child: Text(
@@ -56,9 +56,10 @@ class OptionsTile extends StatelessWidget {
           Container(
               height: 30,
               padding: const EdgeInsets.all(8),
-              margin: const EdgeInsets.only(right: 8),
               decoration: BoxDecoration(
-                  color: kAccentColor, borderRadius: BorderRadius.circular(20)),
+                color: const Color(0xFF44A0CB),
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Center(
                   child: Text(
                 data[1],
@@ -67,9 +68,10 @@ class OptionsTile extends StatelessWidget {
           Container(
               height: 30,
               padding: const EdgeInsets.all(8),
-              margin: const EdgeInsets.only(right: 8),
               decoration: BoxDecoration(
-                  color: kAccentColor, borderRadius: BorderRadius.circular(20)),
+                color: const Color(0xFF44A0CB),
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Center(
                   child: Text(
                 data[2],

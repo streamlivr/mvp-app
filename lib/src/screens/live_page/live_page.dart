@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mvp/src/screens/live_page/components/comment_widget.dart';
 import 'package:mvp/src/screens/live_page/components/profile_widget.dart';
 import 'package:mvp/src/utils/constants.dart';
@@ -23,27 +24,34 @@ class LivePage extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Column(
+        body: Stack(
           children: [
-            VerticalGap(gap: 30),
-            const ProfileWidget(),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Text(
-                      "Tip Creator",
-                      style: font18White,
+            Column(
+              children: [
+                const VerticalGap(gap: 30),
+                const ProfileWidget(),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Tip Creator",
+                          style: font18White,
+                        ),
+                        Image.asset('assets/icons/streamlivr_coin.png')
+                      ],
                     ),
-                    Image.asset('assets/icons/streamlivr_coin.png')
-                  ],
+                  ),
                 ),
-              ),
+                const Spacer(),
+                const CommentWidget(),
+              ],
             ),
-            const Spacer(),
-            const CommentWidget(),
+            LottieBuilder.asset(
+              'assets/animations/hearts.json',
+            )
           ],
         ),
       ),

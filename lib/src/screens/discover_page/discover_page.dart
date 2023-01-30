@@ -18,7 +18,7 @@ class DiscoverPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text("Saved"),
+        title: const Text("Discover"),
         leading: Image.asset(
           "assets/icons/main_logo.png",
         ),

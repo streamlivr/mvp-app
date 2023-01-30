@@ -85,7 +85,7 @@ final font12White = TextStyle(
   color: kWhiteColor,
 );
 final font20White = TextStyle(
-  fontSize: 8.sp,
+  fontSize: 20.sp,
   fontWeight: FontWeight.normal,
   color: kWhiteColor,
 );

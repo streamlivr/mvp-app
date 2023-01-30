@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mvp/src/providers/navigation_provider/navigation_provider.dart';
 import 'package:mvp/src/screens/wallet_page/components/artiste_widget.dart';
@@ -40,7 +41,7 @@ class WalletPage extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.transparent,
+      backgroundColor: kTextColor2,
       body: Padding(
         padding: screenPadding,
         child: Column(
@@ -59,21 +60,21 @@ class WalletPage extends StatelessWidget {
                 ),
                 Image.asset(
                   'assets/icons/streamlivr_coin.png',
-                  height: 10,
-                  width: 10,
+                  height: 15.h,
+                  width: 15.w,
                   fit: BoxFit.cover,
                 )
               ],
             ),
-            const VerticalGap(gap: 20),
+            const VerticalGap(gap: 30),
             //wallet card
             const WalletWidget(),
-            const VerticalGap(gap: 20),
+            const VerticalGap(gap: 40),
             //option 1
             const OptionsTile(),
-            const VerticalGap(gap: 30),
+            const VerticalGap(gap: 40),
             const OptionsTile2(),
-            const VerticalGap(gap: 30),
+            const VerticalGap(gap: 40),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(

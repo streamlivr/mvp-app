@@ -18,16 +18,16 @@ class ProfileWidget extends StatelessWidget {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFFE0E0E0).withOpacity(0.25),
+                  color: const Color.fromARGB(255, 222, 49, 49).withOpacity(1),
                   spreadRadius: 3,
-                  blurRadius: 4,
+                  blurRadius: 5,
                   offset: const Offset(0, 0),
                 )
               ],
-              color: const Color.fromARGB(255, 241, 104, 104),
+              color: const Color.fromARGB(255, 222, 49, 49),
             ),
-            height: 73.h,
-            width: 73.w,
+            height: 110.h,
+            width: 110.w,
             // color: Colors.white,
             // margin: const EdgeInsets.only(right: 8),
             child: Stack(
@@ -63,10 +63,8 @@ class ProfileWidget extends StatelessWidget {
                     height: 18.h,
                     width: 67.w,
                     decoration: BoxDecoration(
-                      color: Color(0xFFEF3B38),
-                      border: Border.all(
-                        color: Color(0xFFBAFFF3)
-                      ),
+                      color: const Color(0xFFEF3B38),
+                      border: Border.all(color: const Color(0xFFBAFFF3)),
                       borderRadius: BorderRadius.circular(7.r),
                     ),
                     child: Row(
@@ -83,7 +81,6 @@ class ProfileWidget extends StatelessWidget {
               ],
             ),
           ),
-        
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
