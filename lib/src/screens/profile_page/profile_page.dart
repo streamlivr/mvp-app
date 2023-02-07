@@ -15,7 +15,7 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         padding: screenPadding,
         children: const [
-          VerticalGap(gap: 30),
+          VerticalGap(gap: 40),
           //profile
           ProfileWidget(),
           VerticalGap(gap: 30),

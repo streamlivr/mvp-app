@@ -49,8 +49,12 @@ class LivePage extends StatelessWidget {
                 const CommentWidget(),
               ],
             ),
-            LottieBuilder.asset(
-              'assets/animations/hearts.json',
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: LottieBuilder.asset(
+                'assets/animations/hearts.json',
+              ),
             )
           ],
         ),

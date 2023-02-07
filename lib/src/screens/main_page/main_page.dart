@@ -124,8 +124,8 @@ class MainPage extends StatelessWidget {
                                 label: ""),
                             BottomNavigationBarItem(
                                 icon: Container(
-                                  height: 30,
-                                  width: 30,
+                                  height: 60,
+                                  width: 60,
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Color(0xFF44A0CB),

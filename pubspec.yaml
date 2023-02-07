@@ -69,6 +69,18 @@ dev_dependencies:
 
  
   flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.0.1+1
+  flutter_launcher_icons: ^0.11.0
+flutter_native_splash:
+  color: '#231459'
+  image: assets/images/logo.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+  adaptive_icon_foreground: "assets/images/logo.png"
+  adaptive_icon_background: "#FFFFFF"
 
 
 flutter:

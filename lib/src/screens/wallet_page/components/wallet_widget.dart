@@ -14,8 +14,10 @@ class WalletWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const RadialGradient(radius: 5, colors: [
           Color(0xFF5D77BA),
-          Color(0xFFD06CA7),
-          Color(0xFF7B9BEF),
+          Color(0xFF5D77BA),
+          Color(0xFF5D77BA),
+//          Color(0xFFD06CA7),
+//          Color(0xFF7B9BEF),
         ]),
         borderRadius: BorderRadius.circular(20.r),
       ),
@@ -30,7 +32,7 @@ class WalletWidget extends StatelessWidget {
           Row(
             children: [
               Text(
-                "35,850,1524 STVR",
+                "35,850,1524",
                 style: font20White,
               ),
               Text(
@@ -46,7 +48,7 @@ class WalletWidget extends StatelessWidget {
           Row(
             children: [
               Text(
-                "Fringed.stvr.mainnet",
+                "wizked.ayo.stvr.mainnet",
                 style: font10White,
               ),
               const HorizontalGap(gap: 5),

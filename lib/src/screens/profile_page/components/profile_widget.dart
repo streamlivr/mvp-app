@@ -92,7 +92,7 @@ class ProfileWidget extends StatelessWidget {
                     style: font15White700,
                   ),
                   Text(
-                    "Ayo",
+                    " Ayo",
                     style: font15White300,
                   ),
                 ],
@@ -100,7 +100,7 @@ class ProfileWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Fringed.stvr.mainnet",
+                    "wizkid.ayo.stvr.mainnet",
                     style: font10Blue,
                   ),
                   //#6F93F1
