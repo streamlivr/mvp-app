@@ -12,7 +12,7 @@ class LivePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String liveID;
-   bool isHost = false;
+   bool isHost = true;
     var size = MediaQuery.of(context).size;
     return Container(
       height: size.height,

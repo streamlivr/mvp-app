@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FilledButton extends StatelessWidget {
+class CustomFilledButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onPressed;
   final Color? isFilled;
-  const FilledButton({Key? key, required this.child, required this.onPressed,  this.isFilled})
+  const CustomFilledButton({Key? key, required this.child, required this.onPressed,  this.isFilled})
       : super(key: key);
   @override
   Widget build(BuildContext context) {

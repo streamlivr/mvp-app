@@ -116,7 +116,7 @@ class _RegisterPageState extends State<RegisterPage>
                       },
                     ),
                     const VerticalGap(gap: 20),
-                    FilledButton(
+                    CustomFilledButton(
                       isFilled: Colors.transparent,
                       child: Row(
                         children: [
@@ -128,7 +128,7 @@ class _RegisterPageState extends State<RegisterPage>
                       onPressed: () {},
                     ),
                     const VerticalGap(gap: 50),
-                    FilledButton(
+                    CustomFilledButton(
                       child: const Text("Login"),
                       onPressed: () {
                         controller.flipCard();
@@ -157,7 +157,7 @@ class _RegisterPageState extends State<RegisterPage>
                       ),
                     ),
                     const VerticalGap(gap: 10),
-                    FilledButton(
+                    CustomFilledButton(
                       isFilled: Colors.transparent,
                       child: Row(
                         children: [
