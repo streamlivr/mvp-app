@@ -6,11 +6,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mvp/src/providers/navigation_provider/navigation_provider.dart';
 import 'package:mvp/src/screens/discover_page/discover_page.dart';
 import 'package:mvp/src/screens/home_page/home_page.dart';
-import 'package:mvp/src/screens/live_page/live_page.dart';
 import 'package:mvp/src/screens/profile_page/profile_page.dart';
 import 'package:mvp/src/screens/saved_page/saved_page.dart';
 import 'package:mvp/src/screens/wallet_page/wallet_page.dart';
 import 'package:provider/provider.dart';
+
+import '../live_page/live_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
