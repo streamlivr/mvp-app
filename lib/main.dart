@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvp/src/screens/launch_page/launch_page.dart';
 import 'package:mvp/src/screens/register_page/register_controller.dart';
+import 'package:mvp/wrapper.dart';
 import 'package:provider/provider.dart';
 
 import 'src/providers/navigation_provider/navigation_provider.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: ThemeData(),
-              home: const LaunchPage(),
+              home: const Wrapper(),
             );
           }),
     );

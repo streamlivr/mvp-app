@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mvp/src/screens/live_page/live_page2.dart';
 
@@ -7,6 +8,7 @@ class LivePage extends StatelessWidget {
   const LivePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var userId = FirebaseAuth.instance.currentUser!.uid;
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: SafeArea(
@@ -24,8 +26,9 @@ class LivePage extends StatelessWidget {
                       pageBuilder: ((context, animation, _) {
                         return FadeTransition(
                           opacity: animation,
-                          child: const LivePage2(
+                          child: LivePage2(
                             isHost: true,
+                            userId: userId,
                           ),
                         );
                       }),
@@ -42,8 +45,9 @@ class LivePage extends StatelessWidget {
                       pageBuilder: ((context, animation, _) {
                         return FadeTransition(
                           opacity: animation,
-                          child: const LivePage2(
+                          child: LivePage2(
                             isHost: false,
+                            userId: userId,
                           ),
                         );
                       }),

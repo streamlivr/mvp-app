@@ -3,10 +3,11 @@ import 'package:zego_uikit_prebuilt_live_streaming/zego_uikit_prebuilt_live_stre
 
 class LivePage2 extends StatelessWidget {
   final bool isHost;
-  const LivePage2({Key? key, required this.isHost}) : super(key: key);
+  final String userId;
+  const LivePage2({Key? key, required this.isHost, required this.userId})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final String liveID;
     var size = MediaQuery.of(context).size;
     return Container(
       height: size.height,
@@ -27,8 +28,8 @@ class LivePage2 extends StatelessWidget {
                 881288133, // Fill in the appID that you get from ZEGOCLOUD Admin Console.
             appSign:
                 '220ce27f3e5bbf043de7eb339252079897f105cfe67341ec40d6897a1b45ed00', // Fill in the appSign that you get from ZEGOCLOUD Admin Console.
-            userID: 'user_id1',
-            userName: 'user_name1',
+            userID: userId,
+            userName: 'user_name2',
             liveID: 'liveID',
             config: isHost
                 ? ZegoUIKitPrebuiltLiveStreamingConfig.host()

@@ -6,10 +6,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mvp/src/screens/main_page/main_page.dart';
 import 'package:mvp/src/screens/register_page/register_controller.dart';
 import 'package:mvp/src/utils/constants.dart';
+import 'package:mvp/src/widgets/custom_progress.dart';
 import 'package:mvp/src/widgets/filled_button.dart';
 import 'package:mvp/src/widgets/horizontal_gap.dart';
 import 'package:mvp/src/widgets/vertical_gap.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../widgets/flip_card_widget.dart';
 
@@ -75,7 +77,7 @@ class _RegisterPageState extends State<RegisterPage>
                 alignment: Alignment.center,
                 child: ListView(
                   children: [
-                    const VerticalGap(gap: 83),
+                    const VerticalGap(gap: 33),
                     Align(
                       alignment: Alignment.topLeft,
                       child: Image.asset('assets/icons/main_logo.png'),
@@ -95,27 +97,23 @@ class _RegisterPageState extends State<RegisterPage>
                     nameInputField(
                       controller: emailTextEditingCOntroller,
                       hint: "koln@streamlivr.com",
-                      icon: SvgPicture.asset(
-                        'assets/icons/message.svg',
+                      icon: Icon(
+                        Icons.email_outlined,
                         color: Colors.white.withOpacity(0.33),
-                        height: 20.h,
-                        width: 20.w,
                       ),
                     ),
                     const VerticalGap(gap: 5),
                     nameInputField(
                       controller: passwordTextEditingCOntroller,
                       hint: "password",
-                      icon: SvgPicture.asset(
-                        'assets/icons/key.svg',
+                      icon: Icon(
+                        Icons.key,
                         color: Colors.white.withOpacity(0.33),
-                        height: 20.h,
-                        width: 20.w,
                       ),
                     ),
-                    const VerticalGap(gap: 180),
+                    const VerticalGap(gap: 130),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 70),
+                      padding: EdgeInsets.symmetric(horizontal: 70.h),
                       child: CustomFilledButton(
                         child: Row(
                           children: [
@@ -131,7 +129,7 @@ class _RegisterPageState extends State<RegisterPage>
                     ),
                     const VerticalGap(gap: 20),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 70),
+                      padding: EdgeInsets.symmetric(horizontal: 70.h),
                       child: CustomFilledButton(
                         isFilled: Colors.transparent,
                         child: Row(
@@ -146,37 +144,60 @@ class _RegisterPageState extends State<RegisterPage>
                     ),
                     const VerticalGap(gap: 50),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 70),
+                      padding: EdgeInsets.symmetric(horizontal: 70.h),
                       child: CustomFilledButton(
                         child: const Text("Login"),
                         onPressed: () {
+                          if (emailTextEditingCOntroller.text.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content:
+                                        Text("email field cannot be empty")));
+                            return;
+                          }
+                          if (passwordTextEditingCOntroller.text.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text(
+                                        "password field cannot be empty")));
+                            return;
+                          }
+                          CustomLoadingProgress()
+                              .showProgress(context: context);
                           provider
                               .loginUser(
                                   email: emailTextEditingCOntroller.text,
                                   password: passwordTextEditingCOntroller.text)
-                              .then((value) {
+                              .then((value) async {
+                            Navigator.pop(context);
                             if (value.status == "success") {
+                              var pref = await SharedPreferences.getInstance();
+                              pref.setString('token', 'value');
                               controller.flipCard();
                               Future.delayed(const Duration(milliseconds: 500))
                                   .then((value) => {
-                                        Navigator.of(context).push(
-                                          PageRouteBuilder(
-                                            transitionDuration:
-                                                kAnimationDuration,
-                                            pageBuilder:
-                                                ((context, animation, _) {
-                                              return FadeTransition(
-                                                opacity: animation,
-                                                child: const MainPage(),
-                                              );
-                                            }),
-                                          ),
-                                        )
+                                        Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                                PageRouteBuilder(
+                                                  transitionDuration:
+                                                      kAnimationDuration,
+                                                  pageBuilder:
+                                                      ((context, animation, _) {
+                                                    return FadeTransition(
+                                                      opacity: animation,
+                                                      child: const MainPage(),
+                                                    );
+                                                  }),
+                                                ),
+                                                (route) => false)
                                       });
                             } else {
+                              String message = value.data
+                                  .toString()
+                                  .replaceRange(0, 14, '')
+                                  .split(']')[1];
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                      content: Text(value.data.toString())));
+                                  SnackBar(content: Text(message)));
                               print(value.data);
                             }
                           });
@@ -195,61 +216,89 @@ class _RegisterPageState extends State<RegisterPage>
                     ),
                     const VerticalGap(gap: 10),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 70),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 70.h,
+                      ),
                       child: CustomFilledButton(
                         isFilled: Colors.transparent,
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 30.h,
-                              width: 30.h,
-                              decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Color(0xFF371B58),
-                                        Color(0xFF42C2FF),
-                                        Color(0xFFA1DFFF),
-                                      ])),
-                              child: Icon(
-                                Icons.add,
-                                size: 20.sp,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 30,
+                                width: 30,
+                                decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    gradient: LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: [
+                                          Color(0xFF371B58),
+                                          Color(0xFF42C2FF),
+                                          Color(0xFFA1DFFF),
+                                        ])),
+                                child: const Icon(
+                                  Icons.add,
+                                  size: 20,
+                                ),
                               ),
-                            ),
-                            const HorizontalGap(gap: 20),
-                            const Text("Create new account"),
-                          ],
+                              const HorizontalGap(gap: 20),
+                              const Text("Create new account"),
+                            ],
+                          ),
                         ),
                         onPressed: () {
+                          if (emailTextEditingCOntroller.text.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content:
+                                        Text("email field cannot be empty")));
+                            return;
+                          }
+                          if (passwordTextEditingCOntroller.text.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text(
+                                        "password field cannot be empty")));
+                            return;
+                          }
+                          CustomLoadingProgress()
+                              .showProgress(context: context);
                           provider
                               .registerUser(
                                   email: emailTextEditingCOntroller.text,
                                   password: passwordTextEditingCOntroller.text)
-                              .then((value) {
+                              .then((value) async {
+                            Navigator.pop(context);
                             if (value.status == "success") {
+                              var pref = await SharedPreferences.getInstance();
+                              pref.setString('token', 'value');
                               controller.flipCard();
                               Future.delayed(const Duration(milliseconds: 500))
                                   .then((value) => {
-                                        Navigator.of(context).push(
-                                          PageRouteBuilder(
-                                            transitionDuration:
-                                                kAnimationDuration,
-                                            pageBuilder:
-                                                ((context, animation, _) {
-                                              return FadeTransition(
-                                                opacity: animation,
-                                                child: const MainPage(),
-                                              );
-                                            }),
-                                          ),
-                                        )
+                                        Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                                PageRouteBuilder(
+                                                  transitionDuration:
+                                                      kAnimationDuration,
+                                                  pageBuilder:
+                                                      ((context, animation, _) {
+                                                    return FadeTransition(
+                                                      opacity: animation,
+                                                      child: const MainPage(),
+                                                    );
+                                                  }),
+                                                ),
+                                                (route) => false)
                                       });
                             } else {
+                              String message = value.data
+                                  .toString()
+                                  .replaceRange(0, 14, '')
+                                  .split(']')[1];
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                      content: Text(value.data.toString())));
+                                  SnackBar(content: Text(message)));
                               print(value.data);
                             }
                           });
@@ -260,7 +309,11 @@ class _RegisterPageState extends State<RegisterPage>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/icons/main_logo.png'),
+                        Image.asset(
+                          'assets/icons/main_logo.png',
+                          height: 20,
+                          width: 20,
+                        ),
                         const Text(
                           "streamlivr",
                           style: TextStyle(
@@ -285,13 +338,16 @@ class _RegisterPageState extends State<RegisterPage>
     required Widget icon,
   }) {
     return TextField(
+      style: const TextStyle(
+        color: Colors.white,
+      ),
       controller: controller,
       decoration: InputDecoration(
         hintText: hint,
-        prefixIcon: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: icon,
+        labelStyle: const TextStyle(
+          color: Colors.white,
         ),
+        prefixIcon: icon,
         hintStyle: TextStyle(
           color: Colors.white.withOpacity(0.33),
         ),
